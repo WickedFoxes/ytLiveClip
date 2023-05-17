@@ -1,0 +1,1 @@
+taskkill /T /F /IM python.exe /IM chrome.exe /IM undetected_chromedriver.exe

@@ -1,0 +1,89 @@
+<div id="layoutSidenav_nav">
+  <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+      <div class="sb-sidenav-menu scrollBar">
+          <div class="nav">
+              <div class="sb-sidenav-menu-heading">Main</div>
+              <a class="nav-link" href="/">
+                  <div class="sb-nav-link-icon"></div>
+                  main board
+              </a>
+              <div class="sb-sidenav-menu-heading">HoloLive</div>
+              <%
+              for(var i=0; i<channel.length; i++){
+                var data = channel[i];
+              %>
+              <a class="nav-link" href="/board/<%=data.channel_name%>/1">
+                  <div class="sb-nav-link-icon"><img id="img" draggable="false" height="24" width="24" alt="" src="<%=data.channel_img%>" style="border-radius: 70%;"></div>
+                  <%=data.channel_name%>
+              </a>
+              <%}%>
+          </div>
+      </div>
+  </nav>
+</div>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="card mb-4">
+              <div class="card-header">
+                <div>
+                  <td><%=title%></td>
+                  <%if(channel_name){%>
+                  <td><a href="/board/<%=encodeURIComponent(channel_name)%>/<%=page*1-1%>">←</a></td>
+                  <td><%=page%></td>
+                  <td><a href="/board/<%=encodeURIComponent(channel_name)%>/<%=page*1+1%>">→</a></td>
+                  <%}%>
+                  <%if(!channel_name){%>
+                  <td><a href="/board/<%=page*1-1%>">←</a></td>
+                  <td><%=page%></td>
+                  <td><a href="/board/<%=page*1+1%>">→</a></td>
+                  <%}%>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <%
+                  for(var i=0; i<video.length; i++){
+                    var data = video[i];
+                %>
+                <div class="col-6 col-sm-4 col-md-3">
+                  <a href="/view/<%=encodeURIComponent(data.video_name)%>">
+                    <div class="container" style="width:100%;">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12">
+                                <img src="<%=data.video_img%>" alt="이미지" style="width:100%;">
+                            </div>
+                            <div class="col-2 col-sm-2 col-md-2">
+                              <div class="sb-nav-link-icon"><img id="img" draggable="false" height="30" width="30" alt="" src="<%=data.channel_img%>" style="border-radius: 70%;"></div>
+                            </div>
+                            <div class="col-10 col-sm-10 col-md-10">
+                                <div class="video_tittle" style="height:50px"><%=data.video_name%></div>
+                            </div>
+                        </div>
+                    </div>
+                  </a>
+                </div>
+                <%}%>
+                </div>
+
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="py-4 bg-light mt-auto">
+    <div class="container-fluid px-4">
+      <div class="d-flex align-items-center justify-content-between small">
+        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+        <div>
+            <a href="#">Privacy Policy</a>
+            &middot;
+            <a href="#">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
