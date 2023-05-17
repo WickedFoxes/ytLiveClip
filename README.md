@@ -68,3 +68,4 @@ app.js 실행한 후 <http://localhost> 접속하여 서버 정상 실행 확인
     npm app.js
 
 ![image](https://github.com/WickedFoxes/ytLiveClip/assets/48846088/993c2ffa-bccc-4501-b25b-cb53f9e3e090)
+![image](https://github.com/WickedFoxes/ytLiveClip/assets/48846088/50cbcb22-db49-4557-8fe3-9e400dd37f6b)
